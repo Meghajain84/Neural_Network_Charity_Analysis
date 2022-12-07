@@ -57,16 +57,24 @@ In optimation notebook, I removed  **ASK_AMT** ; instead I created the **ASK_AMT
     * No, I could not improve beyond 73%. I was able to improve the first run of the model(one without checkpoints) from 53% to 64%, but the later one(with checkpoints) stayed at 72/73% despite of my many attempts.
 
     **Images comparing original vs optimized accuracy with no checkpoints**
+    
+    **ORIGINAL**
 
-    ![OPTIMIZED_model_creation](https://github.com/Meghajain84/Neural_Network_Charity_Analysis/blob/main/optimized_model_creation.PNG)
+    ![original_accuracy_wo_checkpoints](https://github.com/Meghajain84/Neural_Network_Charity_Analysis/blob/main/original_accuracy_wo_checkpoints.PNG)
 
-    ![OPTIMIZED_model_creation](https://github.com/Meghajain84/Neural_Network_Charity_Analysis/blob/main/optimized_model_creation.PNG)
+    **OPTIMIZED**
+
+    ![optimized_accuracy_wo_checkpoints](https://github.com/Meghajain84/Neural_Network_Charity_Analysis/blob/main/optimized_accuracy_wo_checkpoints.PNG)
 
     **Images comparing original vs optimized accuracy with checkpoints**
 
-    ![OPTIMIZED_model_creation](https://github.com/Meghajain84/Neural_Network_Charity_Analysis/blob/main/optimized_model_creation.PNG)
+    **ORIGINAL**
 
-    ![OPTIMIZED_model_creation](https://github.com/Meghajain84/Neural_Network_Charity_Analysis/blob/main/optimized_model_creation.PNG)
+    ![original_accuracy_w_checkpoints](https://github.com/Meghajain84/Neural_Network_Charity_Analysis/blob/main/original_accuracy_w_checkpoints.PNG)
+
+    **OPTIMIZED**
+
+    ![optimized_accuracy_w_checkpoints](https://github.com/Meghajain84/Neural_Network_Charity_Analysis/blob/main/optimized_accuracy_w_checkpoints_part2.PNG)
 
 
 * What steps did you take to try and increase model performance?
@@ -81,7 +89,8 @@ In optimation notebook, I removed  **ASK_AMT** ; instead I created the **ASK_AMT
 ## Summary: 
 ### Summarize the overall results of the deep learning model. 
 * Relu in hidden layer with Sigmoid in outer layer worked best for me.
-* Overall results suggest that increasing layers did not made an impact on model performance. Infact with 1 hidden layer model I was getting 73% accuracy over model with more than 2 hidden layers
+* Overall results suggest that increasing layers did not made an impact on model performance. Infact with 1 hidden layer model I was getting about 73% accuracy over model with more than 2 hidden layers(about 72% accuracy)
+* Checkpoints improve the performance of the model
 
 ### Include a recommendation for how a different model could solve this classification problem, and explain your recommendation.
 * Random forest classifier may work better as it works better on tabular data, and with data that has outliers. We definitely have outliers in this dataset.
