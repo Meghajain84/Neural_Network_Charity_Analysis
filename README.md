@@ -55,16 +55,29 @@ In optimation notebook, I removed  **ASK_AMT** ; instead I created the **ASK_AMT
 
 * Were you able to achieve the target model performance?
     * No, I could not improve beyond 73%. I was able to improve the first run of the model(one without checkpoints) from 53% to 64%, but the later one(with checkpoints) stayed at 72/73% despite of my many attempts.
+
+    **Images comparing original vs optimized accuracy with no checkpoints**
+
+    ![OPTIMIZED_model_creation](https://github.com/Meghajain84/Neural_Network_Charity_Analysis/blob/main/optimized_model_creation.PNG)
+
+    ![OPTIMIZED_model_creation](https://github.com/Meghajain84/Neural_Network_Charity_Analysis/blob/main/optimized_model_creation.PNG)
+
+    **Images comparing original vs optimized accuracy with checkpoints**
+
+    ![OPTIMIZED_model_creation](https://github.com/Meghajain84/Neural_Network_Charity_Analysis/blob/main/optimized_model_creation.PNG)
+
+    ![OPTIMIZED_model_creation](https://github.com/Meghajain84/Neural_Network_Charity_Analysis/blob/main/optimized_model_creation.PNG)
+
+
 * What steps did you take to try and increase model performance?
     * In more than three attempts to improve performance I did the folllowing- 
         * I added two/three/four hidden layers with different combinations of neuron in addition to input layer
         * I changed the epochs from 100 to 40 to 25
+        * I created new column ASK_GRP_AMT categorizing the values of ASK_AMT in range instead of integer. I deleted the original column ASK_GRP.
         * Changing the value_counts cutover to replace values as 'other' for columns APPLICATION_TYPE and  CLASSIFICATION
 
             ![value_counts](https://github.com/Meghajain84/Neural_Network_Charity_Analysis/blob/main/value_counts.png)
 
-        * I created new column ASK_GRP_AMT categorizing the values of ASK_AMT in range instead of integer. I deleted the original column ASK_GRP.
-    
 ## Summary: 
 ### Summarize the overall results of the deep learning model. 
 * Relu in hidden layer with Sigmoid in outer layer worked best for me.
