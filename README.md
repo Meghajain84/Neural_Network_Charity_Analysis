@@ -34,6 +34,8 @@ Our dataset contains more than 34,000 organizations that have received funding f
 
 In optimation notebook, instead of using **ASK_AMT** , I created the **ASK_AMT_GRP** that will categorize the amount in range, this range was saved in this column. 
 
+![ask_amt_VS_ask_amt_grp](https://github.com/Meghajain84/Neural_Network_Charity_Analysis/blob/main/ask_amt_VS_ask_amt_grp.PNG)
+
 * What variable(s) are neither targets nor features, and should be removed from the input data?
     * EIN
     * NAME
@@ -44,7 +46,13 @@ In optimation notebook, I removed  **ASK_AMT** ; instead I created the **ASK_AMT
 ### Compiling, Training, and Evaluating the Model
 * How many neurons, layers, and activation functions did you select for your neural network model, and why?
     * Initially I started with input relu layer having 80 nodes, hidden relu layer having 30 nodes and output layer of sigmoid with 1 node 
+
+        ![original_model_creation](https://github.com/Meghajain84/Neural_Network_Charity_Analysis/blob/main/original_model_creation.PNG)
+
     * In optimized version, I thought with more nodes I may get better performance, therefore I played with two, three or four hidden layers with nodes ranging from 15 to 100 with more nodes in first layer and slowly decreasing nodes in subsequent layers. I was hoping that with more layers and nodes, model will learn faster.
+
+        ![OPTIMIZED_model_creation](https://github.com/Meghajain84/Neural_Network_Charity_Analysis/blob/main/optimized_model_creation.PNG)
+
 * Were you able to achieve the target model performance?
     * No, I could not improve beyond 73%. I was able to improve the first run of the model(one without checkpoints) from 53% to 64%, but the later one(with checkpoints) stayed at 72/73% despite of my many attempts.
 * What steps did you take to try and increase model performance?
@@ -52,6 +60,9 @@ In optimation notebook, I removed  **ASK_AMT** ; instead I created the **ASK_AMT
         * I added two/three/four hidden layers with different combinations of neuron in addition to input layer
         * I changed the epochs from 100 to 40 to 25
         * Changing the value_counts cutover to replace values as 'other' for columns APPLICATION_TYPE and  CLASSIFICATION
+
+            ![value_counts](https://github.com/Meghajain84/Neural_Network_Charity_Analysis/blob/main/value_counts.png)
+
         * I created new column ASK_GRP_AMT categorizing the values of ASK_AMT in range instead of integer. I deleted the original column ASK_GRP.
     
 ## Summary: 
@@ -60,7 +71,6 @@ In optimation notebook, I removed  **ASK_AMT** ; instead I created the **ASK_AMT
 * Overall results suggest that increasing layers did not made an impact on model performance. Infact with 1 hidden layer model I was getting 73% accuracy over model with more than 2 hidden layers
 
 ### Include a recommendation for how a different model could solve this classification problem, and explain your recommendation.
-* Next step would be to remove some of the rows that were categorized to other, for e.g. the one with ASK_AMT over 8 billion dollars
-* Random forest classifier may work better 
+* Random forest classifier may work better as it works better on tabular data, and with data that has outliers. We definitely have outliers in this dataset.
+* Another approach could be to remove some of the rows that were categorized to other, for e.g. the one with ASK_AMT over 8 billion dollars
 
-![Total](https://github.com/Meghajain84/MechaCar_Statistical_Analysis/blob/main/deliverable2_total_summary.PNG)
